@@ -251,9 +251,8 @@ module AnnotationTable =
     ///
     /// If the processes contain a source with the same name as a sample in the referenceProcesses. Additionally transforms it to a sample
     let updateSamplesByReference (referenceProcesses : Process seq) (processes : Process seq) = 
-        referenceProcesses
-        |> Seq.append processes
-        |> updateSamplesBy processes
+        processes
+        |> updateSamplesBy referenceProcesses
 
     /// Updates the sample information in the given processes with the information of the samples in the given referenceProcesses.
     ///
